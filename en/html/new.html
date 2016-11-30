@@ -1,0 +1,77 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>3.&nbsp;What&#8217;s New in Spring Security 4.1</title><link rel="stylesheet" type="text/css" href="css/manual-multipage.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="Spring Security Reference"><link rel="up" href="preface.html" title="Part&nbsp;I.&nbsp;Preface"><link rel="prev" href="introduction.html" title="2.&nbsp;Introduction"><link rel="next" href="samples.html" title="4.&nbsp;Samples and Guides (Start Here)"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">3.&nbsp;What&#8217;s New in Spring Security 4.1</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="introduction.html">Prev</a>&nbsp;</td><th width="60%" align="center">Part&nbsp;I.&nbsp;Preface</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="samples.html">Next</a></td></tr></table><hr></div><div class="chapter"><div class="titlepage"><div><div><h2 class="title"><a name="new" href="#new"></a>3.&nbsp;What&#8217;s New in Spring Security 4.1</h2></div></div></div>
+
+<p>There were <a class="ulink" href="https://github.com/spring-projects/spring-security/issues?utf8=%E2%9C%93&amp;q=milestone%3A%224.1.0+RC1%22" target="_top">100+ RC1 issues</a> and <a class="ulink" href="https://github.com/spring-projects/spring-security/issues?utf8=%E2%9C%93&amp;q=milestone%3A%224.1.0+RC2%22" target="_top">60+ RC2 issues</a> fixed in Spring Security 4.1.</p>
+<p>Here is the list of improvements:</p>
+<div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="java-configuration-improvements" href="#java-configuration-improvements"></a>3.1&nbsp;Java Configuration Improvements</h2></div></div></div>
+
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+<a class="link" href="jc.html#jc-authentication-userdetailsservice" title="5.6.5&nbsp;UserDetailsService">Simplified UserDetailsService Java Configuration</a>
+</li><li class="listitem">
+<a class="link" href="jc.html#jc-authentication-authenticationprovider" title="5.6.4&nbsp;AuthenticationProvider">Simplified AuthenticationProvider Java Configuration</a>
+</li><li class="listitem">
+Configurable Content Negotiating <code class="literal">LogoutSuccessHandler</code>(s) via <code class="literal">LogoutConfigurer</code>
+</li><li class="listitem">
+Configurable <code class="literal">InvalidSessionStrategy</code> via <code class="literal">SessionManagementConfigurer</code>
+</li><li class="listitem">
+Ability to add a <code class="literal">Filter</code> at a specific location in the chain using <code class="literal">HttpSecurity.addFilterAt</code>
+</li></ul></div>
+</div>
+<div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="web-application-security-improvements" href="#web-application-security-improvements"></a>3.2&nbsp;Web Application Security Improvements</h2></div></div></div>
+
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+<a class="link" href="mvc.html#mvc-requestmatcher" title="37.2&nbsp;MvcRequestMatcher">MvcRequestMatcher</a>
+</li><li class="listitem">
+<a class="link" href="headers.html#headers-csp" title="20.1.7&nbsp;Content Security Policy (CSP)">Content Security Policy (CSP)</a>
+</li><li class="listitem">
+<a class="link" href="headers.html#headers-hpkp" title="20.1.4&nbsp;HTTP Public Key Pinning (HPKP)">HTTP Public Key Pinning (HPKP)</a>
+</li><li class="listitem">
+<a class="link" href="cors.html" title="19.&nbsp;CORS">CORS</a>
+</li><li class="listitem">
+<a class="link" href="csrf.html#csrf-cookie" title="CookieCsrfTokenRepository">CookieCsrfTokenRepository</a> provides simple AngularJS &amp; CSRF integration
+</li><li class="listitem">
+Added <code class="literal">ForwardAuthenticationFailureHandler</code> &amp; <code class="literal">ForwardAuthenticationSuccessHandler</code>
+</li><li class="listitem">
+<a class="link" href="mvc.html#mvc-authentication-principal" title="37.3&nbsp;@AuthenticationPrincipal">AuthenticationPrincipal</a> supports expression attribute to support transforming the <code class="literal">Authentication.getPrincipal()</code> object (i.e. handling immutable custom <code class="literal">User</code> domain objects)
+</li></ul></div>
+</div>
+<div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="authorization-improvements" href="#authorization-improvements"></a>3.3&nbsp;Authorization Improvements</h2></div></div></div>
+
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+<a class="link" href="el-access.html#el-access-web-path-variables" title="26.2.2&nbsp;Path Variables in Web Security Expressions">Path Variables in Web Security Expressions</a>
+</li><li class="listitem">
+<a class="link" href="el-access.html#method-security-meta-annotations" title="Method Security Meta Annotations">Method Security Meta Annotations</a>
+</li></ul></div>
+</div>
+<div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="crypto-module-improvements" href="#crypto-module-improvements"></a>3.4&nbsp;Crypto Module Improvements</h2></div></div></div>
+
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+SCrypt support with <code class="literal">SCryptPasswordEncoder</code>
+</li><li class="listitem">
+PBKDF2 support with <a class="link" href="crypto.html#spring-security-crypto-passwordencoders" title="35.4&nbsp;Password Encoding">Pbkdf2PasswordEncoder</a>
+</li><li class="listitem">
+New <code class="literal">BytesEncryptor</code> implementation for BouncyCastle using <span class="emphasis"><em>AES/CBC/PKCS5Padding</em></span> and <span class="emphasis"><em>AES/GCM/NoPadding</em></span> algorithms
+</li></ul></div>
+</div>
+<div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="testing-improvements" href="#testing-improvements"></a>3.5&nbsp;Testing Improvements</h2></div></div></div>
+
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+<a class="link" href="test-method.html#test-method-withanonymoususer" title="11.3&nbsp;@WithAnonymousUser">@WithAnonymousUser</a>
+</li><li class="listitem">
+<a class="link" href="test-method.html#test-method-withuserdetails" title="11.4&nbsp;@WithUserDetails">@WithUserDetails</a> allows specifying the <code class="literal">UserDetailsService</code> bean name
+</li><li class="listitem">
+<a class="link" href="test-method.html#test-method-meta-annotations" title="11.6&nbsp;Test Meta Annotations">Test Meta Annotations</a>
+</li><li class="listitem">
+Ability to mock a list of <code class="literal">GrantedAuthority</code> using <code class="literal">SecurityMockMvcResultMatchers.withAuthorities</code>
+</li></ul></div>
+</div>
+<div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="general-improvements" href="#general-improvements"></a>3.6&nbsp;General Improvements</h2></div></div></div>
+
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+Re-organization of sample projects
+</li><li class="listitem">
+Moved to GitHub issues
+</li></ul></div>
+</div>
+</div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="introduction.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="preface.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="samples.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">2.&nbsp;Introduction&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;4.&nbsp;Samples and Guides (Start Here)</td></tr></table></div></body></html>
